@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nerys Moda</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #c2185b;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .producto {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .producto:hover {
+      transform: scale(1.02);
+    }
+
+    .producto img {
+      width: 100%;
+      height: auto;
+    }
+
+    .producto h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .producto button {
+      margin: 1rem 0;
+      padding: 0.6rem 1.2rem;
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .producto button:hover {
+      background-color: #a5124a;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nerys Moda</h1>
+  </header>
+
+  <section class="productos">
+
+    <!-- Ejemplo de producto con botón que llama a JavaScript -->
+    <div class="producto">
+      <img src="https://i.ibb.co/mVmgbsxz/Nerys-Imagen1.jpg" alt="Producto 1" />
+      <h3>Camiseta colores</h3>
+      <button onclick="comprarProducto('Camiseta colores')">Comprar ahora</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://i.ibb.co/JRPk5c8k/Nerys-Imagen2.jpg" alt="Producto 2" />
+      <h3>Variedad Camisetas</h3>
+      <button onclick="comprarProducto('Camiseta Polo')">Comprar ahora</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://i.ibb.co/NntCwLSN/Nerys-Imagen3.jpg" alt="Producto 3" />
+      <h3>Busa informal</h3>
+      <button onclick="comprarProducto('Blusa Rosada')">Comprar ahora</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://i.ibb.co/TBwmb2g1/Nerys-Imagen4.jpg" alt="Producto 4" />
+      <h3>Pantalón Clásico</h3>
+      <button onclick="comprarProducto('Conjunto dama')">Comprar ahora</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://i.ibb.co/ymvPZwtN/Nerys-Imagen5.jpg" alt="Producto 5" />
+      <h3>Camiseta clasica</h3>
+      <button onclick="comprarProducto('Color blanco')">Comprar ahora</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://i.ibb.co/4RB4WYWq/Nerys-Imagen6.jpg" alt="Producto 6" />
+      <h3>Top Deportivo</h3>
+      <button onclick="comprarProducto('Camiseta deportiva')">Comprar ahora</button>
+    </div>
+
+  </section>
+
+  <script>
+    function comprarProducto(nombreProducto) {
+      alert("Estás a punto de comprar: " + nombreProducto);
+      // Redirigir a WhatsApp
+      const numero = "573053551963"; // cambia al número real
+      const mensaje = `Costurero deseo información de "${nombreProducto}".`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
